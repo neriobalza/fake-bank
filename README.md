@@ -1,1 +1,1 @@
-# Fake Bank by Nerio Balza
+# Fake Bank

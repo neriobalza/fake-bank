@@ -4,8 +4,11 @@
     "baseUrl": ".",
     "paths": {
       "@components/*": ["src/components/*"],
+      "@contexts/*": ["src/contexts/*"],
+      "@hooks/*": ["src/hooks/*"],
       "@navigation/*": ["src/navigation/*"],
-      "@screens/*": ["src/screens/*"]
+      "@screens/*": ["src/screens/*"],
+      "@utils/*": ["src/utils/*"]
     }
   }
 }
