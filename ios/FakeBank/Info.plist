@@ -52,6 +52,23 @@
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
 	<key>UIAppFonts</key>
-	<array/>
+	<array>
+		<string>OpenSans-Var.ttf</string>
+		<string>OpenSans-Bold.ttf</string>
+		<string>OpenSans-Light.ttf</string>
+		<string>OpenSans-Medium.ttf</string>
+		<string>OpenSans-Regular.ttf</string>
+		<string>OpenSans-SemiBold.ttf</string>
+		<string>OpenSans_C-Bold.ttf</string>
+		<string>OpenSans_C-Light.ttf</string>
+		<string>OpenSans_C-Medium.ttf</string>
+		<string>OpenSans_C-Regular.ttf</string>
+		<string>OpenSans_C-SemiBold.ttf</string>
+		<string>OpenSans_SC-Bold.ttf</string>
+		<string>OpenSans_SC-Light.ttf</string>
+		<string>OpenSans_SC-Medium.ttf</string>
+		<string>OpenSans_SC-Regular.ttf</string>
+		<string>OpenSans_SC-SemiBold.ttf</string>
+	</array>
 </dict>
 </plist>

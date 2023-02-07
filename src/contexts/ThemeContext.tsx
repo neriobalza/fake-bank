@@ -14,7 +14,7 @@ const ThemeProvider = ({children}: {children: React.ReactNode}) => {
   };
 
   const valueContext = {
-    theme: darkMode ? darkTheme : theme,
+    theme: !darkMode ? darkTheme : theme,
     switchThemeMode,
   };
 

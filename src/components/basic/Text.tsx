@@ -1,32 +1,30 @@
 import React from 'react';
-import {StyleSheet, Text as RNText} from 'react-native';
+import {Text as ReactText} from 'react-native';
+import {useTheme} from '@hooks/index';
 
 interface TextProps {
   children?: React.ReactNode;
   size?: 16 | 18 | 20;
-  weight?: '300' | '400' | '500';
+  weight?: 'Light' | 'Regular' | 'Medium' | 'SemiBold';
+  color?: string;
 }
 
 const Text = (props: TextProps) => {
-  const {size, weight, children} = props;
+  const {size, weight, children, color} = props;
+  const {theme} = useTheme();
+
   let textStyles = {
-    fontWeight: weight,
     fontSize: size,
+    color: color || theme.color.text,
+    fontFamily: `OpenSans-${weight}`,
   };
 
-  return <RNText style={[textStyles, styles.text]}>{children}</RNText>;
+  return <ReactText style={textStyles}>{children}</ReactText>;
 };
 
 Text.defaultProps = {
   size: 16,
-  weight: '400',
+  weight: 'Regular',
 };
-
-const styles = StyleSheet.create({
-  text: {
-    fontFamily: 'Roboto',
-    color: 'white',
-  },
-});
 
 export default Text;
