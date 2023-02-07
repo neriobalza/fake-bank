@@ -1,25 +1,34 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {Text, View} from 'react-native';
+import {useTheme} from '@hooks/index';
 
 interface TitleProps {
   children?: React.ReactNode;
+  size?: 24 | 30 | 36;
+  weight: 'SemiBold' | 'Bold';
 }
 
 const Title = (props: TitleProps) => {
-  const {children} = props;
+  const {children, size, weight} = props;
+  const {theme} = useTheme();
+
+  const titleStyles = {
+    color: theme.color.text,
+    fontSize: size,
+    fontFamily: `OpenSans-${weight}`,
+    marginBottom: 10,
+  };
 
   return (
     <View>
-      <Text style={styles.title}>{children}</Text>
+      <Text style={titleStyles}>{children}</Text>
     </View>
   );
 };
 
-const styles = StyleSheet.create({
-  title: {
-    fontFamily: 'OpenSans-SemiBold',
-    fontSize: 30,
-  },
-});
+Title.defaultProps = {
+  size: 24,
+  weight: 'Bold',
+};
 
 export default Title;

@@ -13,7 +13,7 @@ export const theme = {
     section: palette.gray,
     text: palette.darkBlue,
     button: palette.orange,
-    circleButton: palette.white,
+    circleButton: '#FFF',
     white: palette.white,
     fadedText: 'rgba(8, 8, 14, 0.5)',
   },
@@ -36,6 +36,7 @@ export const darkTheme = {
     background: palette.darkBlue,
     text: palette.white,
     fadedText: 'rgba(240,240,240, 0.5)',
+    circleButton: palette.gray,
   },
   statusBar: {
     background: palette.darkBlue,

@@ -9,8 +9,8 @@ const Layout = ({children}: PropsWithChildren) => {
   return (
     <SafeAreaView
       style={{
-        backgroundColor: theme.color.background,
         ...styles.container,
+        backgroundColor: theme.color.background,
       }}>
       <StatusBar
         barStyle={theme.statusBar.dark ? 'light-content' : 'dark-content'}

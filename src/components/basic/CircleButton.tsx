@@ -1,16 +1,49 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, TouchableOpacity} from 'react-native';
+import Icon from 'react-native-vector-icons/Octicons';
 
-type Props = {};
+import {useTheme} from '@hooks/index';
 
-const CircleButton = (props: Props) => {
+interface CircleButtonProps {
+  name?: string;
+}
+
+const CircleButton = (props: CircleButtonProps) => {
+  const {name} = props;
+  const {theme} = useTheme();
+
+  console.log(name);
+
+  const buttonStyles = {
+    ...styles.button,
+    backgroundColor: theme.color.circleButton,
+  };
+
+  const iconStyles = {
+    color: theme.color.text,
+  };
+
   return (
-    <View>
-      <Text>CircleButton</Text>
-    </View>
+    <TouchableOpacity style={buttonStyles} activeOpacity={0.75}>
+      <Icon name={name as string} size={30} style={iconStyles} />
+    </TouchableOpacity>
   );
 };
 
-export default CircleButton;
+CircleButton.defaultProps = {
+  name: 'alert',
+};
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  button: {
+    width: 70,
+    height: 70,
+    borderRadius: 35,
+    elevation: 5,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginVertical: 10,
+  },
+});
+
+export default CircleButton;
