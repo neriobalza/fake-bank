@@ -1,14 +1,14 @@
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {AuthProvider, ThemeProvider} from '@contexts/index';
-import {AppNavigation} from '@navigation/index';
+import {Navigation} from '@navigation/index';
 
 const App = (): JSX.Element => {
   return (
     <NavigationContainer>
       <ThemeProvider>
         <AuthProvider>
-          <AppNavigation />
+          <Navigation />
         </AuthProvider>
       </ThemeProvider>
     </NavigationContainer>

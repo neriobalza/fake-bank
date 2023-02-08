@@ -5,11 +5,12 @@ import Icon from 'react-native-vector-icons/Octicons';
 import {useTheme} from '@hooks/index';
 
 interface CircleButtonProps {
+  onPress?: () => void;
   name?: string;
 }
 
 const CircleButton = (props: CircleButtonProps) => {
-  const {name} = props;
+  const {name, onPress} = props;
   const {theme} = useTheme();
 
   console.log(name);
@@ -24,7 +25,10 @@ const CircleButton = (props: CircleButtonProps) => {
   };
 
   return (
-    <TouchableOpacity style={buttonStyles} activeOpacity={0.75}>
+    <TouchableOpacity
+      onPress={onPress}
+      style={buttonStyles}
+      activeOpacity={0.75}>
       <Icon name={name as string} size={30} style={iconStyles} />
     </TouchableOpacity>
   );

@@ -5,7 +5,7 @@ import type {RootStackParamList} from './types';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
-const AppNavigation = () => {
+const Navigation = () => {
   return (
     <Stack.Navigator
       initialRouteName="Start"
@@ -15,4 +15,4 @@ const AppNavigation = () => {
   );
 };
 
-export default AppNavigation;
+export default Navigation;

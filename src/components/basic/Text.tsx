@@ -4,7 +4,7 @@ import {useTheme} from '@hooks/index';
 
 interface TextProps {
   children?: React.ReactNode;
-  size?: 16 | 18 | 20;
+  size?: 14 | 16 | 18 | 20;
   weight?: 'Light' | 'Regular' | 'Medium' | 'SemiBold';
   color?: string;
 }

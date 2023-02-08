@@ -4,7 +4,7 @@ import {useTheme} from '@hooks/index';
 
 interface TitleProps {
   children?: React.ReactNode;
-  size?: 24 | 30 | 36;
+  size?: 24 | 30 | 36 | 50;
   weight: 'SemiBold' | 'Bold';
 }
 
@@ -16,7 +16,7 @@ const Title = (props: TitleProps) => {
     color: theme.color.text,
     fontSize: size,
     fontFamily: `OpenSans-${weight}`,
-    marginBottom: 10,
+    marginBottom: 5,
   };
 
   return (

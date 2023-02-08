@@ -4,6 +4,7 @@ import {theme, darkTheme} from '@utils/index';
 export const ThemeContext = createContext({
   theme: theme,
   switchThemeMode: () => {},
+  darkMode: false,
 });
 
 const ThemeProvider = ({children}: {children: React.ReactNode}) => {
@@ -16,6 +17,7 @@ const ThemeProvider = ({children}: {children: React.ReactNode}) => {
   const valueContext = {
     theme: darkMode ? darkTheme : theme,
     switchThemeMode,
+    darkMode,
   };
 
   return (

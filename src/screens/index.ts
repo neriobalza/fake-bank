@@ -1,2 +1,2 @@
-export {default as Login} from './Login';
 export {default as Start} from './Start';
+export {default as SignIn} from './auth/SignIn';
