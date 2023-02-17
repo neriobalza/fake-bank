@@ -7,15 +7,17 @@ interface Props {
   onPress?: () => void;
   title?: string;
   children?: React.ReactNode;
+  elevation?: boolean;
 }
 
 const Button = (props: Props) => {
-  const {onPress, title, children} = props;
+  const {onPress, title, children, elevation} = props;
   const {theme} = useTheme();
 
   const buttonStyles = {
-    backgroundColor: theme.color.button,
     ...styles.button,
+    backgroundColor: theme.color.button,
+    elevation: elevation ? 5 : 0,
   };
 
   return (
@@ -32,13 +34,17 @@ const Button = (props: Props) => {
   );
 };
 
+Button.defaultProps = {
+  elevation: true,
+};
+
 const styles = StyleSheet.create({
   button: {
-    borderRadius: 10,
+    borderRadius: 8,
     height: 52,
     justifyContent: 'center',
     alignItems: 'center',
-    elevation: 5,
+
     marginVertical: 10,
   },
 });

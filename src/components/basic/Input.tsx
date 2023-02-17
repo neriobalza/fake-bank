@@ -15,7 +15,7 @@ const Input = (props: InputProps) => {
 
   const inputStyles = {
     ...styles.input,
-    borderBottomColor: theme.color.section,
+    borderBottomColor: theme.color.text,
     color: theme.color.text,
   };
 

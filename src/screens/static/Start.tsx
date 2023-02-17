@@ -1,15 +1,29 @@
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
+import {NativeStackScreenProps} from '@react-navigation/native-stack';
+import {RootStackParamList} from '@navigation/index';
 import {
   Layout,
   Button,
   Text,
-  TextLink,
+  TextButton,
   SwitchTheme,
   Title,
 } from '@components/index';
 
-const Start = () => {
+type Props = NativeStackScreenProps<RootStackParamList, 'Home'>;
+
+const Start = (props: Props) => {
+  const {navigation} = props;
+
+  const navigateToSignIn = () => {
+    navigation.navigate('Auth', {isNew: false});
+  };
+
+  const navigateToSignUnp = () => {
+    navigation.navigate('Auth', {isNew: true});
+  };
+
   return (
     <Layout>
       <View style={styles.container}>
@@ -23,11 +37,11 @@ const Start = () => {
             <Text size={18}>Not a real bank.</Text>
           </View>
 
-          <Button title="Sign In" />
+          <Button title="Sign In" onPress={navigateToSignIn} />
 
           <View style={styles.mainLinks}>
             <Text>Aren't an user yet?</Text>
-            <TextLink link="SignUp">Sign Up</TextLink>
+            <TextButton title="Sign Up" onPress={navigateToSignUnp} />
           </View>
         </View>
 
@@ -53,12 +67,13 @@ const styles = StyleSheet.create({
 
   main: {
     gap: 20,
-    paddingHorizontal: 20,
+    paddingHorizontal: 24,
     marginBottom: 100,
   },
 
   logo: {
     alignItems: 'center',
+    // marginBottom: 30,
   },
 
   mainLinks: {

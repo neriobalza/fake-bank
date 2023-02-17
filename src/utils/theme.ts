@@ -19,14 +19,15 @@ export const theme = {
     foreground: palette.white,
     white: palette.white,
     black: palette.black,
+    purple: palette.purple,
     text: palette.darkBlue,
     fadedText: palette.fadedDarkBlue,
-    section: palette.gray,
+    blue: palette.blue,
     button: palette.orange,
     circleButton: palette.white,
   },
   statusBar: {
-    background: palette.softWhite,
+    background: palette.white,
     dark: false,
   },
   spacing: {
@@ -42,13 +43,13 @@ export const darkTheme = {
   color: {
     ...theme.color,
     background: palette.darkBlue,
-    foreground: palette.purple,
+    foreground: palette.gray,
     text: palette.white,
     fadedText: palette.fadedSoftWhite,
     circleButton: palette.gray,
   },
   statusBar: {
-    background: palette.darkBlue,
+    background: palette.gray,
     dark: true,
   },
 };

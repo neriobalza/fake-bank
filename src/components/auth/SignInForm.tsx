@@ -1,20 +1,30 @@
 import React from 'react';
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {StyleSheet, View} from 'react-native';
+import {useNavigation} from '@react-navigation/native';
+import {useTheme} from '@hooks/index';
+import {RootStackParamList} from '@navigation/index';
 import Input from '../basic/Input';
 import TextButton from '../basic/TextButton';
 import Button from '../basic/Button';
-import {useTheme} from '@hooks/index';
+
 type Props = {
   switchForm: () => void;
 };
+type NavigationProps = NativeStackNavigationProp<RootStackParamList>;
 
-const SignUpForm = (props: Props) => {
+const LoginForm = (props: Props) => {
   const {switchForm} = props;
   const {theme} = useTheme();
+  const navigation = useNavigation<NavigationProps>();
 
   const wrappeStyles = {
     ...styles.wrapper,
     backgroundColor: theme.color.foreground,
+  };
+
+  const handleSubmit = () => {
+    navigation.navigate('App');
   };
 
   return (
@@ -23,12 +33,18 @@ const SignUpForm = (props: Props) => {
         <View>
           <Input label="Email" placeholder="Email..." />
           <Input label="Password" placeholder="Password..." isPassword={true} />
+          <TextButton
+            onPress={() => {
+              navigation.navigate('ForgotPassword');
+            }}>
+            I forgot my password
+          </TextButton>
         </View>
 
-        <Button title="Create now!" elevation={false} />
+        <Button title="Lets go!" elevation={false} onPress={handleSubmit} />
 
         <TextButton onPress={switchForm} align="center">
-          I already have an account.
+          Create an account
         </TextButton>
       </View>
     </View>
@@ -51,4 +67,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default SignUpForm;
+export default LoginForm;

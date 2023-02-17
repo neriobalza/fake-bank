@@ -1,5 +1,12 @@
 export type RootStackParamList = {
-  Start: undefined;
-  SignIn: undefined;
-  SignUp: undefined;
+  Home: undefined;
+  Auth: {
+    isNew: boolean;
+  };
+  ForgotPassword: undefined;
+  App: undefined;
+};
+
+export type AppTabParamList = {
+  Home: undefined;
 };

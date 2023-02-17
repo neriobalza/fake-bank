@@ -5,25 +5,19 @@ import Text from './Text';
 
 interface LinkProps {
   children?: React.ReactNode;
-  link?: string;
-  options?: object;
+  title?: string;
+  onPress?: () => void;
+  align?: 'left' | 'center' | 'right';
 }
 
 const TextLink = (props: LinkProps) => {
-  const {children, link} = props;
+  const {children, title, onPress, align} = props;
   const {theme} = useTheme();
 
-  const goTo = () => {
-    if (link) {
-      console.log(link);
-      // navigation.navigate(link);
-    }
-  };
-
   return (
-    <TouchableOpacity onPress={goTo} activeOpacity={0.75}>
-      <Text weight="SemiBold" color={theme.color.button}>
-        {children}
+    <TouchableOpacity onPress={onPress} activeOpacity={0.75}>
+      <Text weight="SemiBold" color={theme.color.button} align={align}>
+        {children ? children : title}
       </Text>
     </TouchableOpacity>
   );

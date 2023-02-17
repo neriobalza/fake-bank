@@ -6,10 +6,11 @@ interface TitleProps {
   children?: React.ReactNode;
   size?: 24 | 30 | 36 | 50;
   weight: 'SemiBold' | 'Bold';
+  align: 'left' | 'center' | 'right';
 }
 
 const Title = (props: TitleProps) => {
-  const {children, size, weight} = props;
+  const {children, size, weight, align} = props;
   const {theme} = useTheme();
 
   const titleStyles = {
@@ -17,6 +18,7 @@ const Title = (props: TitleProps) => {
     fontSize: size,
     fontFamily: `OpenSans-${weight}`,
     marginBottom: 5,
+    textAlign: align,
   };
 
   return (
@@ -29,6 +31,7 @@ const Title = (props: TitleProps) => {
 Title.defaultProps = {
   size: 24,
   weight: 'Bold',
+  align: 'left',
 };
 
 export default Title;

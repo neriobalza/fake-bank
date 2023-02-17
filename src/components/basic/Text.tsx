@@ -7,16 +7,18 @@ interface TextProps {
   size?: 14 | 16 | 18 | 20;
   weight?: 'Light' | 'Regular' | 'Medium' | 'SemiBold';
   color?: string;
+  align: 'left' | 'center' | 'right';
 }
 
 const Text = (props: TextProps) => {
-  const {size, weight, children, color} = props;
+  const {size, weight, children, color, align} = props;
   const {theme} = useTheme();
 
   let textStyles = {
     fontSize: size,
     color: color || theme.color.text,
     fontFamily: `OpenSans-${weight}`,
+    textAlign: align,
   };
 
   return <ReactText style={textStyles}>{children}</ReactText>;
@@ -25,6 +27,7 @@ const Text = (props: TextProps) => {
 Text.defaultProps = {
   size: 16,
   weight: 'Regular',
+  align: 'left',
 };
 
 export default Text;
